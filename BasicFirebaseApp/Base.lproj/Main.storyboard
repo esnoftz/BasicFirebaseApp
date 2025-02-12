@@ -49,13 +49,46 @@
                                         <rect key="frame" x="0.0" y="151.66666666666669" width="393" height="607.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="tLO-4T-dD2">
-                                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="tLO-4T-dD2" customClass="GroceryCell" customModule="BasicFirebaseApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="393" height="24.333333969116211"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tLO-4T-dD2" id="j0B-Zs-fXS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="24.333333969116211"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVf-4C-ucr">
+                                                            <rect key="frame" x="10" y="0.0" width="373" height="24.333333333333332"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmO-ba-M66">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="186.66666666666666" height="24.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxt-ZF-CRY">
+                                                                    <rect key="frame" x="186.66666666666663" y="0.0" width="186.33333333333337" height="24.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="OmO-ba-M66" firstAttribute="width" secondItem="CVf-4C-ucr" secondAttribute="width" multiplier="0.5" id="8hn-ba-N0W"/>
+                                                                <constraint firstItem="Lxt-ZF-CRY" firstAttribute="width" secondItem="CVf-4C-ucr" secondAttribute="width" multiplier="0.5" id="Er8-UQ-yJs"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="CVf-4C-ucr" firstAttribute="top" secondItem="j0B-Zs-fXS" secondAttribute="top" id="DCh-F2-vK5"/>
+                                                        <constraint firstAttribute="bottom" secondItem="CVf-4C-ucr" secondAttribute="bottom" id="aqR-sD-nqC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CVf-4C-ucr" secondAttribute="trailing" constant="10" id="cyy-mN-loU"/>
+                                                        <constraint firstItem="CVf-4C-ucr" firstAttribute="leading" secondItem="j0B-Zs-fXS" secondAttribute="leading" constant="10" id="vGT-e5-HT4"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="itemLabel" destination="OmO-ba-M66" id="4vU-jo-18E"/>
+                                                    <outlet property="quantityLabel" destination="Lxt-ZF-CRY" id="AHs-Ly-TE7"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
