@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var groceries = [GroceryItem]()
     
+    var selectedRow = -1
+    
     
 
     
@@ -110,6 +112,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
+    @IBAction func changeItemAction(_ sender: UIButton) {
+        groceries[selectedRow].name = groceryItemInput.text!
+        groceries[selectedRow].quantity = Int(groceryQuantityInput.text!)!
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return names.count
         return groceries.count
@@ -141,6 +150,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRow = indexPath.row
+    }
+    
+    // LEFT OFF: 10f
     
 
 

@@ -46,5 +46,10 @@ class GroceryItem {
     func deleteFromFirebase() {
         ref.child("groceries").child(key).removeValue()
     }
+    
+    func updateFirebase(dict: [String: Any]){
+            ref.child("groceries").child(key).updateChildValues(dict)
+    }
+
 
 }
